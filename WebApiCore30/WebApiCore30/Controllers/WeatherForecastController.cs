@@ -21,6 +21,7 @@ namespace WebApiCore30.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+
         }
 
         [HttpGet]
