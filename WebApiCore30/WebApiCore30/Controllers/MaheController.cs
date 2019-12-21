@@ -11,10 +11,12 @@ namespace WebApiCore30.Controllers
     [ApiController]
     public class MaheController : ControllerBase
     {
-
+        
         [HttpGet]
         public string Get()
         {
+
+
             return $"Harisov kontroler -> {DateTime.Now.ToString("dd-MM-yyyy")}  u  {DateTime.Now.ToString("HH:MM:SS")} ";
         }
     }
