@@ -15,7 +15,7 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Drugi Mahe kontroler -> {DateTime.Now.ToString("DD-MMMM-yyyy")} ";
+            return $"Harisov kontroler -> {DateTime.Now.ToString("dd-MM-yyyy")} u {DateTime.Now.ToString("HH:MM:SS")} ";
         }
     }
 }
