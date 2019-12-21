@@ -24,9 +24,9 @@ namespace WebApiCore30.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public string Get()
         {
-            return new List<string>(){$"Mahe car{DateTime.Now}"};
+            return $"Mahe car{DateTime.Now}";
         }
     }
 }
