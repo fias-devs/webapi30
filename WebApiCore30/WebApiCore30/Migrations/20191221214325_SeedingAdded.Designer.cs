@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApiCore30;
 
 namespace WebApiCore30.Migrations
 {
     [DbContext(typeof(DLWMSContext))]
-    partial class DLWMSContextModelSnapshot : ModelSnapshot
+    [Migration("20191221214325_SeedingAdded")]
+    partial class SeedingAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,13 +47,6 @@ namespace WebApiCore30.Migrations
                             Ime = "Denis",
                             Indeks = "IB150051",
                             Prezime = "Music"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Ime = "Jasmin",
-                            Indeks = "IB150052",
-                            Prezime = "Azemovic"
                         });
                 });
 #pragma warning restore 612, 618
