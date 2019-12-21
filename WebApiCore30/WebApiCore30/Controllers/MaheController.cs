@@ -15,7 +15,7 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Pravi Mahe kontroler -> {DateTime.Now} \n Novitet u verziji 2 ";
+            return $"Pravi Mahe kontroler -> {DateTime.Now.ToString("DD/MMMM:yyyy")} \n Novitet u verziji 2 ";
         }
     }
 }
