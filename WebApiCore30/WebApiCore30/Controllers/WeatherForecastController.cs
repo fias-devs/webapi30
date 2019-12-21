@@ -27,7 +27,7 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Mahe car{DateTime.Now}";
+            return $"Mahe car since {DateTime.Now} & Haris car since {DateTime.Now}";
         }
     }
 }
