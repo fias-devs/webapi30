@@ -2,17 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApiCore30;
 
 namespace WebApiCore30.Migrations
 {
-    [DbContext(typeof(DLWMSContext))]
-    [Migration("20191221214325_SeedingAdded")]
-    partial class SeedingAdded
+    [DbContext(typeof(FIADevOpsContext))]
+    partial class FIADevOpsContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,7 +18,7 @@ namespace WebApiCore30.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiCore30.Models.Studenti", b =>
+            modelBuilder.Entity("WebApiCore30.Models.Zaposlenici", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,7 +28,7 @@ namespace WebApiCore30.Migrations
                     b.Property<string>("Ime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Indeks")
+                    b.Property<string>("JMBG")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prezime")
@@ -38,15 +36,22 @@ namespace WebApiCore30.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Studentis");
+                    b.ToTable("Zaposlenici");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             Ime = "Denis",
-                            Indeks = "IB150051",
+                            JMBG = "13256465489789",
                             Prezime = "Music"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ime = "Jasmin",
+                            JMBG = "13256465489788",
+                            Prezime = "Azemovic"
                         });
                 });
 #pragma warning restore 612, 618

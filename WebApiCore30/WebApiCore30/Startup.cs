@@ -28,9 +28,9 @@ namespace WebApiCore30
         {
             var va = Configuration.GetConnectionString("FIADbConnection");
             services.AddControllers();
-            services.AddDbContextPool<DLWMSContext>(options=>options.UseSqlServer(
+            services.AddDbContextPool<FIADevOpsContext>(options=>options.UseSqlServer(
                 Configuration.GetConnectionString("FIADbConnection")));
-            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IZaposleniciRepository, ZaposleniciRepository>();
 
         }
 

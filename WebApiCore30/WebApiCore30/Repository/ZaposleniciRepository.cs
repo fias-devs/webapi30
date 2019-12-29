@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -6,54 +8,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using WebApiCore30.Models;
+using System.Linq;
 
 namespace WebApiCore30.Repository
 {
 
 
-    public interface IStudentRepository
+    public interface IZaposleniciRepository
     {
-        List<Studenti> GetAll();
-        void AddNew(Studenti student);
+        List<Zaposlenici> GetAll();
+        void AddNew(Zaposlenici student);
     }
-    public class StudentRepository : IStudentRepository
+    public class ZaposleniciRepository : IZaposleniciRepository
     {
-        DLWMSContext _db;
-        public StudentRepository()
+        FIADevOpsContext _db;
+        public ZaposleniciRepository()
         {
 
-            var builder = new DbContextOptionsBuilder<DLWMSContext>();
+            var builder = new DbContextOptionsBuilder<FIADevOpsContext>();
             //var connectionString = configuration.GetConnectionString("FIADbConnection");
-            builder.UseSqlServer("server=.;database=DLWMSFia;Integrated Security=True");
+            builder.UseSqlServer("server=.;database=FIADevOPS;Integrated Security=True");
             //return new DLWMSContext(builder.Options);
 
-            _db = new DLWMSContext(builder.Options);
+            _db = new FIADevOpsContext(builder.Options);
         }
 
-        public void AddNew(Studenti student)
+        public void AddNew(Zaposlenici zaposlenik)
         {
             throw new NotImplementedException();
         }
 
-        public List<Studenti> GetAll()
+        public List<Zaposlenici> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Zaposlenici.ToList();
         }
     }
 
 
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DLWMSContext>
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<FIADevOpsContext>
     {
 
-        public DLWMSContext CreateDbContext(string[] args)
+        public FIADevOpsContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(@Directory.GetCurrentDirectory() + "/../WebApiCore30/appsettings.json").Build();
-            var builder = new DbContextOptionsBuilder<DLWMSContext>();
+            var builder = new DbContextOptionsBuilder<FIADevOpsContext>();
             var connectionString = configuration.GetConnectionString("FIADbConnection");
             builder.UseSqlServer(connectionString);
-            return new DLWMSContext(builder.Options);
+            return new FIADevOpsContext(builder.Options);
         }
     }
 }

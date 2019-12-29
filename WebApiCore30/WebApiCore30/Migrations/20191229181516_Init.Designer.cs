@@ -8,9 +8,9 @@ using WebApiCore30;
 
 namespace WebApiCore30.Migrations
 {
-    [DbContext(typeof(DLWMSContext))]
-    [Migration("20191221213228_Initil")]
-    partial class Initil
+    [DbContext(typeof(FIADevOpsContext))]
+    [Migration("20191229181516_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace WebApiCore30.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiCore30.Models.Studenti", b =>
+            modelBuilder.Entity("WebApiCore30.Models.Zaposlenici", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,7 +30,7 @@ namespace WebApiCore30.Migrations
                     b.Property<string>("Ime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Indeks")
+                    b.Property<string>("JMBG")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prezime")
@@ -38,7 +38,23 @@ namespace WebApiCore30.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Studentis");
+                    b.ToTable("Zaposlenici");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ime = "Denis",
+                            JMBG = "13256465489789",
+                            Prezime = "Music"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ime = "Jasmin",
+                            JMBG = "13256465489788",
+                            Prezime = "Azemovic"
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApiCore30.Repository;
 
 namespace WebApiCore30.Controllers
 {
@@ -15,9 +16,12 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
+            ZaposleniciRepository zr = new ZaposleniciRepository();
+            
 
 
-            return $"Harisov kontroler -> {DateTime.Now.ToString("dd-MM-yyyy")}  u  {DateTime.Now.ToString("HH:MM:SS")} ";
+
+            return $"U bazi je trenutno ->{zr.GetAll().Count()} zaposlenika";
         }
     }
 }
