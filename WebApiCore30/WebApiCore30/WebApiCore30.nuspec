@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WebApiCore30</id>
+    <version>$version$</version>
+    <authors>FIA.DEV.Team</authors>
+    <description>WebApiCore30 DP</description>
+  </metadata>
+  <files>
+    <file src="bin\debug\*.*"/>
+    <file src="..\..\packages\EntityFrameworkCore3.1.0\tools\migrate.exe" />
+    <file src="*.ps1" />    
+  </files>
+</package>

@@ -21,6 +21,7 @@ namespace WebApiCore30
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }
+                );
     }
 }
