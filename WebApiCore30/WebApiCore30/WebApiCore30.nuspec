@@ -7,7 +7,7 @@
     <description>WebApiCore30 DP</description>
   </metadata>
   <files>
-    <file src="bin\debug\*.*"/>
+    <file src="bin\release\*.*"/>
     <file src="..\..\packages\EntityFrameworkCore3.1.0\tools\migrate.exe" />
     <file src="*.ps1" />    
   </files>
