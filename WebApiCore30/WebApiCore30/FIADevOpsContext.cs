@@ -20,6 +20,7 @@ namespace WebApiCore30
                 new Zaposlenici() { Id = 2, Ime = "Jasmin", Prezime = "Azemovic", JMBG = "13256465489788" }
             );
             base.OnModelCreating(modelBuilder);
+
         }
         public DbSet<Zaposlenici> Zaposlenici { get; set; }
     }
