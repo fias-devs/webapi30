@@ -29,7 +29,7 @@ namespace WebApiCore30
             var va = Configuration.GetConnectionString("FIADbConnection");
             services.AddControllers();
             services.AddDbContextPool<FIADevOpsContext>(options=>options.UseSqlServer(
-                Configuration.GetConnectionString("FIADbConnection")));
+                Configuration.GetConnectionString("webapicore.dev.db.connectionstring")));
             services.AddScoped<IZaposleniciRepository, ZaposleniciRepository>();
 
         }

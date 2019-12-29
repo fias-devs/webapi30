@@ -54,7 +54,7 @@ namespace WebApiCore30.Repository
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(@Directory.GetCurrentDirectory() + "/../WebApiCore30/appsettings.json").Build();
             var builder = new DbContextOptionsBuilder<FIADevOpsContext>();
-            var connectionString = configuration.GetConnectionString("FIADbConnection");
+            var connectionString = configuration.GetConnectionString("webapicore.dev.db.connectionstring");
             builder.UseSqlServer(connectionString);
             return new FIADevOpsContext(builder.Options);
         }
