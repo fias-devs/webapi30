@@ -17,4 +17,13 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Deploy.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WebApiCore30.nuspec">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
