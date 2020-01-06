@@ -26,7 +26,7 @@ namespace WebApiCore30
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var va = Configuration.GetConnectionString("FIADbConnection");
+           // var va = Configuration.GetConnectionString("FIADbConnection");
             services.AddControllers();
             services.AddDbContextPool<FIADevOpsContext>(options=>options.UseSqlServer(
                 Configuration.GetConnectionString("webapicore.dev.db.connectionstring")));
