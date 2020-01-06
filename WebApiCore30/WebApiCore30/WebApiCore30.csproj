@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
-    <StartupObject>WebApiCore30.Program</StartupObject>	
+	
+    <StartupObject></StartupObject>	
   </PropertyGroup>
 
   <ItemGroup>
