@@ -27,7 +27,7 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Trenutno vrijeme na serveru -> {DateTime.Now} ";
+            return $"Trenutno vrijeme na serveru FITa je -> {DateTime.Now} ";
         }
     }
 }
