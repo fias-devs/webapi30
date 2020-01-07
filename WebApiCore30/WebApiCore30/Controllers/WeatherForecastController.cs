@@ -13,7 +13,7 @@ namespace WebApiCore30.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Make kralj"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Make"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -27,7 +27,7 @@ namespace WebApiCore30.Controllers
         [HttpGet]
         public string Get()
         {
-            return $"Trenutno vrijeme na serveru FITa je -> {DateTime.Now} ";
+            return $"Na nastavi iz RSI vrijeme je -> {DateTime.Now} ";
         }
     }
 }
